@@ -3,19 +3,77 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #4b3621; /* Dark Coffee Brown */
+  --foreground: #d7ccc8; /* Creamy Beige */
+  --card-bg: #5d4037; /* Medium Brown */
+  --button-bg: #6d4c41; /* Darker Coffee Brown */
+  --button-hover: #4e342e; /* Even Darker Brown */
+  --text-color: #f5f5dc; /* Light Beige for contrast */
+  --border-color: #8d6e63; /* Warm Brown */
+  --shadow-color: rgba(0, 0, 0, 0.2);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #3e2723;
+    --foreground: #efebe9;
+    --card-bg: #6d4c41;
+    --button-bg: #8d6e63;
+    --button-hover: #5d4037;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+/* Global Card Styles */
+.card {
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+  box-shadow: 4px 4px 10px var(--shadow-color);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Button Styles */
+button {
+  background: var(--button-bg);
+  color: var(--foreground);
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out, transform 0.1s ease-in-out;
+}
+
+button:hover {
+  background: var(--button-hover);
+  transform: scale(1.05);
+}
+
+/* Textarea Styling */
+textarea {
+  background: var(--foreground);
+  color: var(--background);
+  border: 2px solid var(--button-bg);
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+  min-height: 100px;
+}
+
+/* Layout Enhancements */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
